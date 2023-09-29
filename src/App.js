@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import ListAssignment from './components/ListAssignment';
 import GradeAssignment from './components/GradeAssignment';
+import addAssignment from "./components/AddAssignment";
 
 function App() {
   return (
