@@ -10,13 +10,16 @@ function ListAssignment(props) {
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
     const [selectedAssignment, setSelectedAssignment] = useState(null);
+    const token = sessionStorage.getItem("jwt");
 
     useEffect(() => {
         fetchAssignments();
     }, []);
 
     const fetchAssignments = () => {
-        fetch(`${SERVER_URL}/assignment`)
+        fetch(`${SERVER_URL}/assignment`, {
+            headers: {'Authorization' : token}
+        })
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);
@@ -38,6 +41,7 @@ function ListAssignment(props) {
     const deleteAssignment = (assignmentId) => {
         fetch(`${SERVER_URL}/assignment/${assignmentId}`, {
             method: 'DELETE',
+            headers: {'Authorization' : token}
         })
             .then((response) => {
                 if (response.ok) {
