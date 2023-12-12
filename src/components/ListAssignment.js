@@ -44,12 +44,12 @@ function ListAssignment(props) {
                     setMessage('Assignment deleted successfully.');
                     fetchAssignments(); // Refresh the assignment list after deletion
                 } else {
-                    setMessage('Error deleting assignment.');
+                    setMessage(' ');
                 }
             })
             .catch((error) => {
                 console.error(error);
-                setMessage('Error deleting assignment.');
+                setMessage(' ');
             });
     };
 
@@ -91,7 +91,7 @@ function ListAssignment(props) {
                                     fetchAssignments={fetchAssignments}
                                 />
                             </td>
-                            <td><button onClick={() => deleteAssignment(row.id)}>Delete</button>
+                            <td><button id="deletebutton" onClick={() => deleteAssignment(row.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}

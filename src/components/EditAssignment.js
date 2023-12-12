@@ -49,30 +49,33 @@ function EditAssignment(props) {
             {/* Edit Assignment Form */}
             {/*{props.isEditDialogOpen && (*/}
             {/*    <div>*/}
-                    <button onClick={handleOpen}>Edit</button>
+                    <button id="editassignment" onClick={handleOpen}>Edit</button>
                     <Dialog open={open}>
                         <DialogContent>
                     <h3>Edit Assignment</h3>
                     <input
                         type="text"
                         placeholder="Assignment Name"
+                        id="assignmentname1"
                         value={assignmentName}
                         onChange={(e) => setAssignmentName(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="Course Title"
+                        id="coursename1"
                         value={courseTitle}
                         onChange={(e) => setCourseTitle(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="Due Date"
+                        id="assignmentdue1"
                         value={dueDate}
                         onChange={(e) => setDueDate(e.target.value)}
                     />
                             <DialogActions>
-                    <button onClick={handleEditAssignment}>Save</button>
+                    <button id="updatebutton" onClick={handleEditAssignment}>Save</button>
                     <button onClick={handleClose}>Cancel</button>
                         </DialogActions>
                     </DialogContent>

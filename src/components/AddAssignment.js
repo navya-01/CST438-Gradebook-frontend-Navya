@@ -45,36 +45,40 @@ function AddAssignment(props) {
 
     return (
         <div>
-            <button onClick={handleOpen}>Add Assignment</button>
+            <button id="addbutton" onClick={handleOpen}>Add Assignment</button>
             <Dialog open={open}>
             <DialogContent>
                     <h3>Add New Assignment</h3>
                     <input
                         type="text"
                         placeholder="Assignment Name"
+                        id="assignmentname"
                         value={assignmentName}
                         onChange={(e) => setAssignmentName(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="Course Title"
+                        id="coursename"
                         value={courseTitle}
                         onChange={(e) => setCourseTitle(e.target.value)}
                     />
                     <input
                         type="number"
                         placeholder="Course Id"
+                        id="courseID"
                         value={courseId}
                         onChange={(e) => setCourseId(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="Due Date"
+                        id="assignmentdue"
                         value={dueDate}
                         onChange={(e) => setDueDate(e.target.value)}
                     />
                 <DialogActions>
-                    <button onClick={handleAddAssignment}>Save</button>
+                    <button id="saveassignment" onClick={handleAddAssignment}>Save</button>
                     <button onClick={handleClose}>Cancel</button>
                 </DialogActions>
           </DialogContent>
